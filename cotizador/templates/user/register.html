@@ -1,0 +1,16 @@
+{% extends 'components/base.html' %}
+
+{% block body %}
+<div>
+  <h1> Registro </h1>
+  <form method="POST" action=".">
+    {% csrf_token %}
+    {{ failure_label }}
+    <label for="email"> Email </label>
+    <input name="email" type="email" placeholder="Ingrese un email" required>
+    <label for="passowrd"> Password </label>
+    <input name="password" type="password" placeholder="Ingrese su contraseña" required>
+    <input type="submit" value="Enviar" />
+  </form>
+</div>
+{% endblock body %}

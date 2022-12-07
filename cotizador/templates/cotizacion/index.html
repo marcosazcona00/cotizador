@@ -1,0 +1,25 @@
+{% extends 'components/base.html' %} 
+
+{% block body %}
+<div> 
+   <h1>
+     Cotizar Formulario
+   </h1>
+   <form method="POST" action=".">
+      {% csrf_token %}
+      {% for field in fields %}
+      <div>
+        <label>{{field.name}}</label>
+        <input 
+          type="text" 
+          name="{{field.name}}" 
+          placeholder="Ingrese el {{field.name}}" 
+          {% if field.required%} required {% endif %}
+          {% if field.value%} value="{{field.value}}" {% endif %} 
+        />
+      </div>
+      {% endfor %}
+      <input type="submit" value="Enviar" />
+   </form>
+</div>
+{% endblock body %}

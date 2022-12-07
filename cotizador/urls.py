@@ -22,4 +22,5 @@ urlpatterns = [
     path('register/', RegisterView.as_view()),
     path('login/', LoginView.as_view()),
     path('logout/', logoutView),
+    path('cotizar/', CotizarView.as_view()),
 ]
